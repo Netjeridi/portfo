@@ -16,13 +16,14 @@ jobs:
       - name: Install Python 3
         uses: actions/setup-python@v2
         with:
-          python-version: 3.6
+          python-version: 3.8
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run tests with pytest
-        run: pytest 
+        run: | 
+          pytest -rf -x --junitxml=report.xml tests.py
       - name: Run PyLint
         run: |
           pylint ./portfo
