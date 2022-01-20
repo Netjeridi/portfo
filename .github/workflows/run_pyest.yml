@@ -19,5 +19,5 @@ jobs:
           pylint ./portfo
       - name: Run tests with pytest
         run: | 
-          pytest -rf -x --junitxml=report.xml tests.py
+          pytest -rf -x --junitxml=report.xml test.py
 
